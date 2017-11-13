@@ -9,7 +9,15 @@ var commands = {
 	help: function(split) {
 		
 	},
-	
+	addbot: function (split) {
+        var add = parseInt(split[1]);
+        if (isNaN(add)) {
+            add = 1; // Adds 1 bot if user doesnt specify a number
+        }
+
+        for (var i = 0; i < add; i++) {
+            gameServer.bots.addBot();
+        },
 	ejectedmass: function(split) {
 		var x = parseFloat(split[1]);
 		var y = parseFloat(split[2]);
